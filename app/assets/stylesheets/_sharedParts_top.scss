@@ -1,0 +1,28 @@
+.sharedParts_top_header{
+  .upper{
+    display: flex;
+    justify-content: center;
+    .mrclogo{
+      height: 34px;
+    }
+  }
+  .lower{
+    display: flex;
+    justify-content: space-between;
+    .leftBox{
+      display: flex;
+    }
+    .rightBox{
+      display: flex;
+    }
+  }
+}
+.sharedParts_top_footer{
+  color: #ffffff;
+  background-color: #222222;
+  .upper{
+    display: flex;
+    justify-content: space-around;
+  }
+
+}

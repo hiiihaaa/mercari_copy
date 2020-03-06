@@ -1,0 +1,31 @@
+.topWrap
+  .sharedParts_top_header
+    = render partial: "sharedParts/top_header"
+
+  .barner
+    = image_tag "banner-1.png", alt: "slider", class: ""
+  
+  .main
+    .categoryWrap
+      .categoryWrap__header
+        %h2.categoryWrap__header__title
+          人気のカテゴリー
+        %ul.categoryWrap__header__list
+          %li レディース
+          %li メンズ
+          %li 家電・スマホ・カメラ
+          %li おもちゃ・ホビー・グッズ      
+      .categoryWrap__contents
+        = render partial: "index_productsBox"
+  
+  .app
+    .app__leftBox
+      .text1
+        スマホでかんたんフリマアプリ
+      .text2
+        今すぐ無料ダウンロード
+    .app__rightbox
+      = image_tag "download_app_pc.png", alt: "アプリ", class: "app__img1"
+
+  .sharedParts_top_footer
+    = render partial: "sharedParts/top_footer"

@@ -1,0 +1,50 @@
+.topWrap{
+  color: #333333;
+  .barner{
+  }
+
+  .main{
+    .categoryWrap{
+      text-align: center;
+      &__header{
+        padding: 56px 0 30px;
+        &__title{
+          font-size: 28px;
+          font-weight: bold;
+        }
+        &__list{
+          display: flex;
+          justify-content: center;
+          li{
+            padding: 8px 16px;
+            background-color: #efefef;
+            border-radius: 15px;
+          }
+        }
+      }
+      &__contents{
+        background-color: #efefef;
+        .productsWrap{
+          width: 244px;
+          height: 188px;
+          background-color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .app{
+    height: 260px;
+    background-image: url("banner-2.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    color: #333333;
+    &__leftBox{
+      font-size: 24px;
+    }
+    &__img1{
+      height:260px;
+    }
+  }
+}
