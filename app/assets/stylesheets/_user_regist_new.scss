@@ -1,0 +1,19 @@
+.userRegist1Wrap{
+  background-color: #efefef;
+  .main{
+    width: 700px;
+    height: 1010px;
+    background-color: #ffffff;
+    margin: auto;
+    .form_user{
+      
+      .upper{
+        display: flex;
+        .required{
+          background-color: #ff0000;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
