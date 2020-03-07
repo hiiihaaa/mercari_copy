@@ -5,7 +5,7 @@
   .main
     .mainHeader
       会員入力情報
-    =  form_with(model: @user, local: true, url: user_registration_path, class: 'form_user') do |f|
+    = form_with(model: @user, local: true, url: user_registration_path, class: 'form_user') do |f|
       .nicknameWrap
         .upper
           .paction ニックネーム
