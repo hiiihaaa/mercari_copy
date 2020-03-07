@@ -1,0 +1,43 @@
+.userRegist1Wrap
+  .header
+    -# = render partial: ""
+  
+  .main
+    .mainHeader
+      会員入力情報
+    =  form_with(model: @user, local: true, url: user_registration_path, class: 'form_user') do |f|
+      .nicknameWrap
+        .upper
+          .paction ニックネーム
+          .required 必須
+        = f.text_field :nickname
+      .emailWrap
+        .upper
+          .paction メールアドレス
+          .required 必須
+        = f.text_field :email
+      .passwordWrap
+        .upper
+          .paction パスワード
+          .required 必須
+        = f.password_field :password
+      .nameWrap
+        .upper
+          .paction お名前(全角)
+          .required 必須
+        .lower
+          = f.text_field :lastname
+          = f.text_field :firstname
+      .namekanaWrap
+        .upper
+          .paction お名前(カナ)
+          .required 必須
+        .lower
+          = f.text_field :lastname_kana
+          = f.text_field :firstname_kana
+      .birthdayWrap
+        .upper
+          .paction 生年月日
+          .required 必須
+        = f.date_select(:birthday, start_yser: Time.now.year, prompt: "--", use_month_numbers: true, end_year: 1900)
+      = f.submit class: "red_btn", value: "登録"
