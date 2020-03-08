@@ -119,6 +119,10 @@ select {
   *font-size:100%;
   *font-size:100%; /*to enable resizing for IE*/
 }
+
+a{
+  text-decoration: none;
+}
 /*because legend doesn't inherit in IE */
 legend {
   color:#000;

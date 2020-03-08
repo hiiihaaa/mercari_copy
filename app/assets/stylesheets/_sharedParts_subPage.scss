@@ -1,0 +1,27 @@
+.subPageHeader{
+  height: 130px;
+  line-height: 160px;
+  text-align: center;
+  &__mrcLogo{
+    height: 49px;
+  }
+}
+.subPageFooter{
+  padding: 40px;
+  text-align: center;
+  &__link{
+    display: flex;
+    justify-content: center;
+    &__text{
+      color: #333333;
+      font-size: 12px;
+      padding: 8px;
+    }
+  }
+  &__mrcLogo{
+    height: 65px;
+  }
+  &__inc{
+    font-size: 12px;
+  }
+}

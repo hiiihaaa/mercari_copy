@@ -13,9 +13,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     # super
-    para_u = params[:user]
     @user = User.new(user_params)
-    @user.birthday = Date.new(para_u["birthday(1i)"].to_i, para_u["birthday(2i)"].to_i, para_u["birthday(3i)"].to_i).strftime("%Y-%m-%d")
+    @user.birthday = Date.new(params[:user]["birthday(1i)"].to_i, params[:user]["birthday(2i)"].to_i, params[:user]["birthday(3i)"].to_i).strftime("%Y-%m-%d")
     @user.save
     redirect_to root
   end

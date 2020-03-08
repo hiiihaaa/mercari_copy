@@ -1,15 +1,12 @@
-.userRegist1Wrap{
+.exhibitionWrap{
   background-color: #efefef;
   .main{
     width: 700px;
-    height: 1010px;
     background-color: #ffffff;
     margin: auto;
-    .form_user{
+    .smallWrap{
       padding: 40px;
-      .upper{
-        display: flex;
-      }
+      border-bottom: solid 1px #efefef;
     }
   }
 }

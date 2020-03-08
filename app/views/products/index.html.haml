@@ -1,9 +1,9 @@
 .topWrap
+  = render partial: "sharedParts/exhibitionLink"
   .sharedParts_top_header
     = render partial: "sharedParts/top_header"
 
   .barner
-    = image_tag "banner-1.png", alt: "slider", class: ""
   
   .main
     .categoryWrap
@@ -16,7 +16,7 @@
           %li 家電・スマホ・カメラ
           %li おもちゃ・ホビー・グッズ      
       .categoryWrap__contents
-        = render partial: "index_productsBox"
+        = render partial: "index_productsWrap"
   
   .app
     .app__leftBox

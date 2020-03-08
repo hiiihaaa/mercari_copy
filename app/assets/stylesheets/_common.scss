@@ -1,0 +1,65 @@
+.exhibitionLink{
+  height: 160px;
+  width: 160px;
+  background-color: #ff0000;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 32px;
+  right:32px;
+  &__title{
+    display: block;
+    color: #ffffff;
+    padding-top: 32px;
+  }
+  &__camera-logo{
+    height: 54px;
+  }
+}
+
+.formBox{
+  padding-top: 32px;
+  &__upper{
+    display: flex;
+    &__title{
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &__required{
+      width: 32px;
+      height: 16px;
+      margin-left: 8px;
+      background-color: #ff0000;
+      color: #ffffff;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+    }
+    &__option{
+      width: 32px;
+      height: 16px;
+      margin-left: 8px;
+      background-color: #bfbfbf;
+      color: #ffffff;
+      font-size: 12px;
+    }
+  }
+  &__input{
+    width: 100%;
+    height: 48px;
+    margin-top: 16px;
+  }
+}
+
+
+.btn_red{
+  background-color: #ff0000;
+  color: #ffffff;
+}
+.btn_gray{
+  background-color: #cccccc;
+  color:#222222;
+  display: block;
+}
+
