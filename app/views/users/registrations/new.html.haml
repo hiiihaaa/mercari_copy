@@ -6,38 +6,38 @@
     .mainHeader
       会員入力情報
     = form_with(model: @user, local: true, url: user_registration_path, class: 'form_user') do |f|
-      .nicknameWrap
-        .upper
-          .paction ニックネーム
-          .required 必須
-        = f.text_field :nickname
-      .emailWrap
-        .upper
-          .paction メールアドレス
-          .required 必須
-        = f.text_field :email
-      .passwordWrap
-        .upper
-          .paction パスワード
-          .required 必須
-        = f.password_field :password
-      .nameWrap
-        .upper
-          .paction お名前(全角)
-          .required 必須
+      .nicknameWrap.formBox
+        .formBox__upper
+          .formBox__upper__title ニックネーム
+          .formBox__upper__required 必須
+        = f.text_field :nickname, class: "formBox__input"
+      .emailWrap.formBox
+        .formBox__upper
+          .formBox__upper__title メールアドレス
+          .formBox__upper__required 必須
+        = f.text_field :email, class: "formBox__input"
+      .passwordWrap.formBox
+        .formBox__upper
+          .formBox__upper__title パスワード
+          .formBox__upper__required 必須
+        = f.password_field :password, class: "formBox__input"
+      .nameWrap.formBox
+        .formBox__upper
+          .formBox__upper__title お名前(全角)
+          .formBox__upper__required 必須
         .lower
           = f.text_field :lastname
           = f.text_field :firstname
-      .namekanaWrap
-        .upper
-          .paction お名前(カナ)
-          .required 必須
+      .namekanaWrap.formBox
+        .formBox__upper
+          .formBox__upper__title お名前(カナ)
+          .formBox__upper__required 必須
         .lower
           = f.text_field :lastname_kana
           = f.text_field :firstname_kana
-      .birthdayWrap
-        .upper
-          .paction 生年月日
-          .required 必須
+      .birthdayWrap.formBox
+        .formBox__upper
+          .formBox__upper__title 生年月日
+          .formBox__upper__required 必須
         = f.date_select(:birthday, start_yser: Time.now.year, prompt: "--", use_month_numbers: true, end_year: 1900)
-      = f.submit class: "red_btn", value: "登録"
+      = f.submit class: "btn_red", value: "登録"
