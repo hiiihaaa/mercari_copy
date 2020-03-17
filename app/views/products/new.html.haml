@@ -5,7 +5,7 @@
     .smallWrap
       .imgsBox.formBox
         .formBox__upper
-          .formBox__upper__title 出品画像
+          .formBox__upper__label 出品画像
           .formBox__upper__required 必須
         .caption 最大10枚までアップロードできます
         .img
@@ -13,12 +13,12 @@
     .smallWrap
       .nameBox.formBox
         .formBox__upper
-          .formBox__upper__title 商品名
+          .formBox__upper__label 商品名
           .formBox__upper__required必須
         =f.text_field :name, class: "formBox__input"
       .descriptionBox.formBox
         .formBox__upper
-          .formBox__upper__title 商品の説明
+          .formBox__upper__label 商品の説明
           .formBox__upper__required 必須
         = f.text_field :description, class: "formBox__input"
 
@@ -26,17 +26,17 @@
       .caption 商品の詳細
       .categoryBox.formBox
         .formBox__upper
-          .formBox__upper__title カテゴリー
+          .formBox__upper__label カテゴリー
           .formBox__upper__required 必須
         =f.text_field :category, class: "formBox__input"
       .brandBox.formBox
         .formBox__upper
-          .formBox__upper__title ブランド
+          .formBox__upper__label ブランド
           .formBox__upper__option 任意
         = f.text_field :description, class: "formBox__input"
       .conditionBox.formBox
         .formBox__upper
-          .formBox__upper__title 商品の状態
+          .formBox__upper__label 商品の状態
           .formBox__upper__required 必須
         = f.text_field :condition, class: "formBox__input"
     
@@ -44,17 +44,17 @@
       .caption 配送について
       .shippingChargeBox.formBox
         .formBox__upper
-          .formBox__upper__title 配送料の負担
+          .formBox__upper__label 配送料の負担
           .formBox__upper__required 必須
         =f.text_field :shipping_charge, class: "formBox__input"
       .prefectureBox.formBox
         .formBox__upper
-          .formBox__upper__title 配送元の地域
+          .formBox__upper__label 配送元の地域
           .formBox__upper__required 必須
         = f.text_field :prefecture, class: "formBox__input"
       .periodBox.formBox
         .formBox__upper
-          .formBox__upper__title 配送までの日数
+          .formBox__upper__label 配送までの日数
           .formBox__upper__required 必須
         = f.text_field :period, class: "formBox__input"
 
@@ -62,7 +62,7 @@
       .caption 価格 (¥300〜9,999,999)
       .priceBox.formBox
         .formBox__upper
-          .formBox__upper__title 販売価格
+          .formBox__upper__label 販売価格
           .formBox__upper__required 必須
         = f.text_field :shipping_charge, class: "formBox__input"
       .commission
