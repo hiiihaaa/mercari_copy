@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_06_154318) do
+ActiveRecord::Schema.define(version: 2020_03_16_160736) do
+
+  create_table "p_imgs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "product_id"
+    t.string "p_img_file"
+  end
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "category_id"
+    t.string "brand"
+    t.string "condition_id"
+    t.integer "shipping_charge_id"
+    t.integer "shipping_method_id"
+    t.integer "preficture_id"
+    t.integer "period_id"
+    t.integer "price"
+    t.integer "user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false

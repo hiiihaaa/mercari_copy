@@ -16,7 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(user_params)
     @user.birthday = Date.new(params[:user]["birthday(1i)"].to_i, params[:user]["birthday(2i)"].to_i, params[:user]["birthday(3i)"].to_i).strftime("%Y-%m-%d")
     @user.save
-    redirect_to root
+    redirect_to root_path
   end
 
 
@@ -63,9 +63,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    "/product/index"
+    # super(resource)
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
