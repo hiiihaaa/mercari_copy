@@ -1,18 +1,35 @@
-.exhibitionWrap
+.product_new_Wrap
+  -# -------------------header-----------------------------------
+  -# ------------------------------------------------------------
   .header
     = render partial: "sharedParts/subPage_header"
+
+
+  -# -------------------main-------------------------------------
+  -# ------------------------------------------------------------
   = form_with(model: @product, local: true, class: "main") do |f|
+    -# -------------------写真------------------------------------
     .smallWrap
-      .imgsBox.formBox
+      .formBox
         .formBox__upper
           .formBox__upper__label 出品画像
           .formBox__upper__required 必須
         .caption 最大10枚までアップロードできます
-        = f.file_field 
-        .img
+        = f.fields_for :product_imgs do |m|
+          .previews_Wrap#preview_Wrap1
+            .previews_Wrap__pre_Container#previews_Container1
+            = m.label :product_imgs, class: "previews_Wrap__uploader_Container", id: "uploader_Container1", for: "img_uploader" do
+              = m.file_field :product_imgs, multiple: true, id: "img_uploader", name: "product_imgs[]", data: {no: 0}
+              %p.drop ここをクリックしてください              
+          .previews_Wrap#preview_Wrap2
+            .previews_Wrap__pre_Container#previews_Container2
+            = m.label :product_imgs, class: "previews_Wrap__uploader_Container", id: "uploader_Container2", for: "img_uploader" do
+              %p.drop ここをクリックしてください
 
+
+    -# --------------------商品名---------------------------------
     .smallWrap
-      .nameBox.formBox
+      .formBox
         .formBox__upper
           .formBox__upper__label 商品名
           .formBox__upper__required必須
@@ -21,15 +38,16 @@
         .formBox__upper
           .formBox__upper__label 商品の説明
           .formBox__upper__required 必須
-        = f.text_field :description, class: "formBox__input"
+        = f.text_area :description, class: "formBox__input"
 
+    -# -------------------商品詳細----------------------------------
     .smallWrap
       .caption 商品の詳細
-      .categoryBox.formBox
+      .formBox
         .formBox__upper
           .formBox__upper__label カテゴリー
           .formBox__upper__required 必須
-        =f.text_field :category, class: "formBox__input"
+        = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '選択してください'}, {class: "formBox__input"}
       .brandBox.formBox
         .formBox__upper
           .formBox__upper__label ブランド
@@ -39,33 +57,35 @@
         .formBox__upper
           .formBox__upper__label 商品の状態
           .formBox__upper__required 必須
-        = f.text_field :condition, class: "formBox__input"
-    
+        = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: '選択してください'}, {class: "formBox__input"}
+
+    -# ------------------配送について----------------------------------   
     .smallWrap
       .caption 配送について
       .shippingChargeBox.formBox
         .formBox__upper
           .formBox__upper__label 配送料の負担
           .formBox__upper__required 必須
-        =f.text_field :shipping_charge, class: "formBox__input"
+        =f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name,{prompt: '選択してください'}, {class: "formBox__input"}
       .prefectureBox.formBox
         .formBox__upper
           .formBox__upper__label 配送元の地域
           .formBox__upper__required 必須
-        = f.text_field :prefecture, class: "formBox__input"
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: '選択してください'}, {class: "formBox__input"}
       .periodBox.formBox
         .formBox__upper
           .formBox__upper__label 配送までの日数
           .formBox__upper__required 必須
-        = f.text_field :period, class: "formBox__input"
+        = f.collection_select :period_id, Period.all, :id, :name, {prompt: '選択してください'}, {class: "formBox__input"}
 
+    -# -------------------価格----------------------------------
     .smallWrap
       .caption 価格 (¥300〜9,999,999)
       .priceBox.formBox
         .formBox__upper
           .formBox__upper__label 販売価格
           .formBox__upper__required 必須
-        = f.text_field :shipping_charge, class: "formBox__input"
+        = f.text_field :price, class: "formBox__input"
       .commission
         .caption 販売手数料 (10%)
         .calc
@@ -75,5 +95,8 @@
       = f.submit class: "exhibition btn_red", value: "出品する"
       = link_to "戻る", root_path, class: "btn_gray"
 
+
+  -# -------------------footer----------------------------------
+  -# ---------------------------------------------------------
   .footer
     = render partial: "sharedParts/subPage_footer"

@@ -10,7 +10,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
 
       t.integer :shipping_charge_id
       t.integer :shipping_method_id
-      t.integer :preficture_id
+      t.integer :prefecture_id
       t.integer :period_id
 
       t.integer :price
