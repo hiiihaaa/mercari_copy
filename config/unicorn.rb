@@ -1,11 +1,11 @@
-app_path = File.expand_path('../../', __FILE__)   #サーバ上でのアプリケーションコードが設置されているディレクトリを変数に入れておく
-worker_processes 1                                #アプリケーションサーバの性能を決定する
-working_directory app_path                        #アプリケーションの設置されているディレクトリを指定
-pid "#{app_path}/tmp/pids/unicorn.pid"            #Unicornの起動に必要なファイルの設置場所を指定
-listen 3000                                       #ポート番号を指定
-stderr_path "#{app_path}/log/unicorn.stderr.log"  #エラーのログを記録するファイルを指定
-stdout_path "#{app_path}/log/unicorn.stdout.log"  #通常のログを記録するファイルを指定
-timeout 180                                        #Railsアプリケーションの応答を待つ上限時間を設定
+app_path = File.expand_path('../../../', __FILE__)   
+worker_processes 1                                
+working_directory "#{app_path}/current"           
+pid "#{app_path}/shared/tmp/pids/unicorn.pid"
+listen "#{app_path}/shared/tmp/sockets/unicorn.sock"   
+stderr_path "#{app_path}/shared/log/unicorn.stderr.log"  
+stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
+timeout 180      
 
 
 preload_app true
